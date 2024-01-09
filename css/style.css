@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #000; */
+}
+
+@font-face {
+    font-family: 'title';
+    src: url(../fonts/title.ttf);
+}
+
+@font-face{
+    font-family: 'text';
+    src: url(../fonts/text.ttf);
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+/* Классы для всего сайта */
+
+body{
+    background: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.cont{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* Шапка */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo{
+    background-image: url(../img/logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 100px;
+}
+
+nav{
+    font-family: 'title';
+    font-size: 35px;
+}
+
+nav a{
+    border-bottom: 4px solid #fff;
+    transition: 0.15s;
+}
+
+nav a:hover{
+    border-bottom: 4px solid #000;
+    transition: 0.15s;
+}
+
+/* Секция о нас */
+
+.aboutUs{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.aboutUs__block{
+    width: 400px;
+    height: 400px;
+    padding: 40px;
+}
+
+.aboutUs__block :nth-child(1){
+    font-size: 35px;
+    font-family: 'title';
+}
+
+.aboutUs__block :nth-child(2){
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'text';
+}
+
+.aboutUs__img{
+    background: url(../img/amogus_msg.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 60vh;
+}
+
+.aboutUs__btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.aboutUs__btn :nth-child(1){
+    padding: 20px;
+    font-size: 25px;
+    background-image: linear-gradient(45deg, 
+    #606c88, #3f4c6b);
+    color: white;
+    border-radius: 20px;
+}
+
+/* Форма регистрации */
+
+.registr{
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.registr__title{
+    font-size: 30px;
+    font-family: 'title';
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.registr input:not(:last-child){
+    outline: none;
+    border: none;
+    margin: 7px 0;
+    background: rgb(250, 250, 250);
+    border-bottom: 2px solid rgb(78, 78, 78);
+    font-size: 20px;
+    padding: 15px;
+    font-family: 'title';   
+    transition: 0.2s; 
+}
+
+.registr input:not(:last-child):focus{
+    border-bottom: 2px solid rgb(223, 159, 77);
+    transition: 0.2s;
+}
+
+.registr__btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;    
+}
+
+.registr__btn input{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 22px;
+    font-family: 'title';
+    background-image: linear-gradient(45deg, 
+    #606c88, #3f4c6b);
+    color: white;
+    cursor: pointer;
+}
+
+.registr p{
+    text-align: center;
+    margin-top: 15px;
+    font-family: 'text';
+    font-size: 18px;
+}
+
+/* Подвал сайта */
+
+footer{
+    display: flex;
+    justify-content: center;
+    font-family: 'text';
+    font-weight: bold;
+    padding: 20px;
+    border-top: 2px solid #000;
+    margin: 0 20px;
+    bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .aboutUs__img{
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+        margin-top: 30px;
+    }
+}

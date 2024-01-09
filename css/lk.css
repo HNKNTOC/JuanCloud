@@ -1,0 +1,570 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #000; */
+}
+
+@font-face {
+    font-family: 'title';
+    src: url(../fonts/title.ttf);
+}
+
+@font-face {
+    font-family: 'text';
+    src: url(../fonts/text.ttf);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* Классы для всего сайта */
+
+body {
+    background: rgb(250, 250, 250);
+}
+
+
+/* Шапка */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    background-image: url(../img/logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 100px;
+}
+
+nav {
+    font-family: 'title';
+    font-size: 30px;
+}
+
+nav a {
+    border-bottom: 4px solid #00000000;
+    transition: 0.15s;
+}
+
+nav a:hover {
+    border-bottom: 4px solid #000;
+    transition: 0.15s;
+}
+
+
+/* Личный кабинет */
+
+.contForLk {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.lk {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    height: 760px;
+}
+
+.lk__left {
+    background: rgb(231, 238, 241);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lk__btn__upload {
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-family: 'title';
+    text-align: center;
+    background: #f5d93a;
+    cursor: pointer;
+}
+
+.lk__menu {
+    height: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.ajax__pnkt__menu {
+    margin: 2px 0;
+    padding: 5px;
+    font-family: 'text';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ajax__pnkt__menu:hover {
+    background: rgb(205, 216, 221);
+}
+
+.lk__pnkt__menu__active {
+    background: rgb(220, 230, 236);
+}
+
+.lk__status {
+    background: linear-gradient(0deg, rgb(231, 206, 25), rgb(248, 187, 43));
+    padding: 20px 30px;
+    font-family: 'text';
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.progressBar {
+    height: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progressBar :nth-child(1) {
+    height: 100%;
+    background: white;
+}
+
+.padding__lk__right{
+    padding: 30px;
+}
+
+.lk__right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.lk__right__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.lk__right__head :last-child {
+    font-family: 'title';
+    font-size: 30px;
+
+}
+
+#back{
+    margin-right: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn__disable{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.lk__right__content {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    height: 550px;
+}
+
+.lk__right__file {
+    width: 100px;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.cock{
+    cursor: pointer;
+    max-height: 220px;
+}
+
+.lk__right__file__selected {
+    background: rgb(220, 230, 236);
+}
+
+.lk__right__file :first-child {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+
+.folder {
+    background: url(../img/folder.png);
+}
+
+.img {
+    background: url(../img/img_icon.png);
+}
+
+.audio {
+    background: url(../img/audio_icon.png);
+}
+
+.video {
+    background: url(../img/video_icon.png);
+}
+
+.file_icon{
+    background: url(../img/file_icon.png);
+}
+
+.lk__right__file :nth-child(2) {
+    font-family: 'text';
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    -o-text-overflow: ellipsis;
+}
+
+.download__file__btn{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    font-family: 'text';
+    display: flex;
+    align-items: center;
+}
+
+.download__file__btn:active{
+    background: rgb(163, 163, 163);
+}
+
+.upload__dark {
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload__window {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    height: auto;
+}
+
+.upload__close {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 25px;
+    font-family: 'text';
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.upload__close__btn {
+    cursor: pointer;
+}
+
+.upload__window :nth-child(4) {
+    display: flex;
+}
+
+.upload__window label {
+    padding: 20px;
+    background: #f5d93a;
+    font-size: 20px;
+    font-family: 'text';
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.upload__window__btn {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'text';
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(#00b4db, #0083b0);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.upload__window__closed {
+    display: none;
+}
+
+/* Меню инструментов */
+
+.lk__instruments{
+    padding: 20px;
+    background: rgb(70, 64, 64);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.lk__instruments > *{
+    padding: 10px;
+    font-family: 'text';
+    background: rgb(224, 224, 224);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lk__instruments div:active{
+    background: rgb(158, 158, 158);
+}
+
+/* Окно создания папки */
+
+.upload__window input[type=text]{
+    width: 400px;
+    font-family: 'text';
+    font-size: 20px;
+    margin-right: 20px;
+    padding: 0 20px;
+}
+
+.msg{
+    position: absolute; 
+    top: 0;
+    width: 100%;
+}
+
+.msg :first-child{
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+    min-width: 200px;
+    max-width: 500px;
+    border: 2px solid #000;
+    border-top: none;
+    font-family: 'text';
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.msg__hide{
+    display: none;
+}
+
+.cont{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.user__row__head{
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.user__row div, form{
+    text-align: center;
+    height: 100%;
+}
+
+.user__login{
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+}
+
+.user__row div{
+    width: 350px;
+}
+
+.user__row form{
+    width: 200px;
+    margin: 0 10px;
+}
+
+.user__row .id__user{
+    width: 150px;
+}
+
+.user__row{
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    font-family: 'text';
+    border: 2px solid #000;
+}
+
+.user__row select, option{
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'text';
+    margin-bottom: 10px;
+}
+
+.user__row input{
+    padding: 10px;
+    font-family: 'text';
+    font-size: 20px;
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    
+}
+
+@media (max-width: 730px) {
+    #create__folder, #rename{
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .lk__left, .logo{
+        display: none;
+    }
+}
+
+
+
+
+::selection{
+  color: #fff;
+  background: #6990F2;
+}
+
+section .row{
+  margin-bottom: 10px;
+  background: #E9F0FF;
+  list-style: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'text';
+  font-weight: bold;
+}
+section .row i{
+  color: #6990F2;
+  font-size: 30px;
+}
+section .details span{
+  font-size: 14px;
+}
+.progress-area .row .content{
+  width: 100%;
+  margin-left: 15px;
+}
+.progress-area .details{
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+.progress-area .content .progress-bar{
+  height: 6px;
+  width: 100%;
+  margin-bottom: 4px;
+  background: #fff;
+  border-radius: 30px;
+}
+.content .progress-bar .progress{
+  height: 100%;
+  width: 0%;
+  background: #6990F2;
+  border-radius: inherit;
+}
+.uploaded-area{
+  max-height: 140px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+.uploaded-area.onprogress{
+  max-height: 150px;
+}
+.uploaded-area::-webkit-scrollbar{
+  width: 0px;
+}
+.uploaded-area .row .content{
+  display: flex;
+  align-items: center;
+}
+.uploaded-area .row .details{
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+.uploaded-area .row .details .size{
+  color: #404040;
+  font-size: 11px;
+}
+.uploaded-area i.fa-check{
+  font-size: 16px;
+}
+
+/* Стилизация скролла */
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #cfcfcf;
+    border-radius: 20px;
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:decrement {
+    display: none;
+}
+
+/* Заблокировать кнопку загрузки */
+.disable__btn__uploadJS{
+    pointer-events: none;
+    background: #aa9728;
+}
